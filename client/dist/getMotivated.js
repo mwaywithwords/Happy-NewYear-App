@@ -1,8 +1,15 @@
 import axios from "axios"
+import  {useState, React} from "react"
+
+
+ export const [breakfast, setBreakfast] = useState([])
+
+
 
 export const getBreakfast = ()=> {
   axios.get("/getBreakfast").then((response) =>{
     console.log(response.data.recipes[0] )
+    setBreakfast(response.data.recipes[0])
   })
   .catch((err) => {
     console.log(err)
