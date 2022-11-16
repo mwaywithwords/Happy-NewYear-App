@@ -198,7 +198,7 @@ useEffect(()=>{
   return (
     <section>
       <h1>Happy Newyears App 🎆🎇</h1>
-      <p>{quote.q}</p>
+      <h2>{quote.q}</h2>
        {quote.a}
      <Meals breakfast={breakfast} lunch={lunch} dinner={dinner}/>
      <Workout />
