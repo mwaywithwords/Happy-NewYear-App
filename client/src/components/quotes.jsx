@@ -4,7 +4,6 @@ import axios from "axios"
 
 const Quotes = ({quotes}) => {
   const [checked, setChecked] = useState(false);
-  console.log(quotes)
 
   const isChecked = () =>{
     if (checked === false) {
@@ -17,7 +16,7 @@ const Quotes = ({quotes}) => {
 const SaveDailyQuote = () => {
  axios.post("/saveQuotes", {quotes})
       .then((response) => {
-        console.log(response)
+
       } )
       .catch((err)=> {
         console.log(err)

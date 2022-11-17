@@ -4,7 +4,7 @@ import axios from "axios"
 //    getHamstrings, getSpine, getPecs, getTraps, getDelts, getCalves, getBiceps, getTriceps} from "./../../dist/getMotivated.js"
 import Workout from "./workout.jsx"
 import Meals from "./meals.jsx"
-
+import Quotes from "./quotes.jsx"
 const App = () => {
 
   const [breakfast, setBreakfast] = useState({});
@@ -24,7 +24,6 @@ const App = () => {
   const [deltsWorkout, setDeltsWorkout] = useState([]);
   const [pecsWorkout, setPecsWorkout] = useState([]);
 
-  // console.log(breakfast,lunch,dinner,quote)
 
    const getBreakfast = ()=> {
     axios.get("/getBreakfast").then((response) =>{
@@ -213,6 +212,8 @@ const constantData = ()=> {
      upperBackWorkout={upperBackWorkout} spineWorkout={spineWorkout} tricepsWorkout={tricepsWorkout}
      latsWorkout={latsWorkout} pecsWorkout={pecsWorkout} bicepsWorkout={bicepsWorkout} glutsWorkout={glutsWorkout}
      quadsWorkout={quadsWorkout} calfsWorkout={calfsWorkout}/> : null }
+
+       <Quotes quotes={quote}/>
     </section>
 
   )
