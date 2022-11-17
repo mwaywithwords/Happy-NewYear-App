@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require("path");
 const controllers = require("./controllers/goals.js")
+const db = require("./models/Quotes.js")
 
 
 app.use(express.json());
@@ -28,9 +29,8 @@ app.get("/getUpperBack", controllers.getUpperBack)
 app.get("/getLats", controllers.getLats)
 app.get("/getSpine", controllers.getSpine)
 app.get("/getPecs", controllers.getPecs)
-
-
-
+app.get("/getQuotes", db.getQuotes)
+app.post("/saveQuotes", db.saveQuote)
 
 
 
