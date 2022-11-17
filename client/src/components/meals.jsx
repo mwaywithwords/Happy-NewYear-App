@@ -3,14 +3,6 @@ import React from "react"
 
 const Meals = ({breakfast, lunch, dinner}) => {
 
-  console.log(breakfast)
-
-// const par = () => {
-//   if(typeof breakfast.summary === "string") {
-//     return breakfast.summary.slice(0, -1)
-//   }
-// }
-// console.log(par())
 
 return (
   <ul>

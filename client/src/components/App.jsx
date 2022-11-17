@@ -180,19 +180,27 @@ useEffect(()=>{
   getLunch();
   getDinner();
   getQuote();
-  // getLats();
-  // getQuads();
-  // getUpperBack();
-  // getGlutes();
-  // getHamstrings();
-  // getSpine();
-  // getPecs();
-  // getTraps()
-  // getDelts();
-  // getCalves();
-  // getBiceps()
-  // getTriceps();
+  getLats();
+  getQuads();
+  getUpperBack();
+  getGlutes();
+  getHamstrings();
+  getSpine();
+  getPecs();
+  getTraps();
+  getDelts();
+  getCalves();
+  getBiceps()
+  getTriceps();
 },[])
+
+const constantData = ()=> {
+   if(pecsWorkout.length > 0 && tricepsWorkout.length > 0 && bicepsWorkout.length > 0 && deltsWorkout.length > 0 && trapsWorkout.length > 0 &&
+   upperBackWorkout.length > 0 && spineWorkout.length > 0 &&  latsWorkout.length > 0 && hamstringsWorkout.length > 0 && glutsWorkout.length > 0 && quadsWorkout.length > 0 && calfsWorkout.length > 0){
+    return true
+  }
+}
+
 
 
   return (
@@ -200,8 +208,11 @@ useEffect(()=>{
       <h1>Happy Newyears App 🎆🎇</h1>
       <h2>{quote.q}</h2>
        {quote.a}
-     <Meals breakfast={breakfast} lunch={lunch} dinner={dinner}/>
-     <Workout />
+      <Meals breakfast={breakfast} lunch={lunch} dinner={dinner}/>
+   {constantData() ? <Workout trapsWorkout={trapsWorkout} deltsWorkout={deltsWorkout} hamstringsWorkout={hamstringsWorkout}
+     upperBackWorkout={upperBackWorkout} spineWorkout={spineWorkout} tricepsWorkout={tricepsWorkout}
+     latsWorkout={latsWorkout} pecsWorkout={pecsWorkout} bicepsWorkout={bicepsWorkout} glutsWorkout={glutsWorkout}
+     quadsWorkout={quadsWorkout} calfsWorkout={calfsWorkout}/> : null }
     </section>
 
   )

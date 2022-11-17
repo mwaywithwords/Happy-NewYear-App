@@ -7,7 +7,7 @@ const getBrakefast = (req, res)=>{
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random',
     params: {tags: 'breakfast, healthScore: 5', number: '1'},
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIFOODHOST
     }
   };
@@ -26,7 +26,7 @@ const getLunch = (req, res)=>{
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random',
     params: {tags: 'lunch', number: '1'},
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIFOODHOST
     }
   };
@@ -47,7 +47,7 @@ const getDinner = (req, res)=>{
     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random',
     params: {tags: 'dinner', number: '1'},
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIFOODHOST
     }
   };
@@ -76,7 +76,7 @@ const getBiceps = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/biceps',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -94,7 +94,7 @@ const getTriceps = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/triceps',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -114,7 +114,7 @@ const getHamstrings = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/hamstrings',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -132,7 +132,7 @@ const getQuads = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/quads',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -150,7 +150,7 @@ const getCalves = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/calves',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -168,7 +168,7 @@ const getGlutes = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/glutes',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -188,7 +188,7 @@ const getDelts = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/delts',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -206,7 +206,7 @@ const getTraps = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/traps',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -225,7 +225,7 @@ const getPecs = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/pectorals',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -245,7 +245,7 @@ const getLats = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/lats',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -263,7 +263,7 @@ const getUpperBack = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/upper%20back',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
@@ -281,7 +281,7 @@ const getSpine = (req, res)=>{
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/target/spine',
     headers: {
-      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY,
+      'X-RapidAPI-Key':  process.env.XRAPIDAPIKEY2,
       'X-RapidAPI-Host': process.env.XRAPIDAPIWORKOUTHOST
     }
   };
