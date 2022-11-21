@@ -3,8 +3,15 @@ import axios from "axios"
 // import {getBreakfast, getLunch, getDinner,getQuote,getLats, getQuads, getUpperBack, getGlutes,
 //    getHamstrings, getSpine, getPecs, getTraps, getDelts, getCalves, getBiceps, getTriceps} from "./../../dist/getMotivated.js"
 import Workout from "./workout.jsx"
+import MyQuotes from "./myQuotes.jsx"
 import Meals from "./meals.jsx"
 import Quotes from "./quotes.jsx"
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+
+
+
 const App = () => {
 
   const [breakfast, setBreakfast] = useState({});
@@ -23,6 +30,7 @@ const App = () => {
   const [calfsWorkout, setCalfsWorkout] = useState([]);
   const [deltsWorkout, setDeltsWorkout] = useState([]);
   const [pecsWorkout, setPecsWorkout] = useState([]);
+  const [quotes, setQuotes] = useState([]);
 
 
    const getBreakfast = ()=> {
@@ -170,53 +178,86 @@ const App = () => {
     })
   }
 
+  const SaveDailyQuote = () => {
+    axios.get("/getQuotes")
+         .then((response) => {
+         setQuotes(response.data)
+         console.log(response.data)
+         } )
+         .catch((err)=> {
+           console.log(err)
+         })
+     }
+
+  const Background = styled(Paper)(({ theme }) => ({backgroundImage: `url(https://images.pexels.com/photos/6149104/pexels-photo-6149104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
+}))
+
+  const Item = styled(Paper)(({ theme }) => ({
+    // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    backgroundImage: `url(https://images.pexels.com/photos/6149104/pexels-photo-6149104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    color: 'white'
+  }));
 
 
 
 
 useEffect(()=>{
-  getBreakfast();
-  getLunch();
-  getDinner();
+  // getBreakfast();
+  // getLunch();
+  // getDinner();
   getQuote();
-  getLats();
-  getQuads();
-  getUpperBack();
-  getGlutes();
-  getHamstrings();
-  getSpine();
-  getPecs();
-  getTraps();
-  getDelts();
-  getCalves();
-  getBiceps()
-  getTriceps();
+  // getLats();
+  // getQuads();
+  // getUpperBack();
+  // getGlutes();
+  // getHamstrings();
+  // getSpine();
+  // getPecs();
+  // getTraps();
+  // getDelts();
+  // getCalves();
+  // getBiceps()
+  // getTriceps();
+  SaveDailyQuote()
 },[])
 
 const constantData = ()=> {
-   if(pecsWorkout.length > 0 && tricepsWorkout.length > 0 && bicepsWorkout.length > 0 && deltsWorkout.length > 0 && trapsWorkout.length > 0 &&
-   upperBackWorkout.length > 0 && spineWorkout.length > 0 &&  latsWorkout.length > 0 && hamstringsWorkout.length > 0 && glutsWorkout.length > 0 && quadsWorkout.length > 0 && calfsWorkout.length > 0){
+   if( pecsWorkout.length > 0   //&& hamstringsWorkout.length > 0 && glutsWorkout.length > 0 && quadsWorkout.length > 0 && calfsWorkout.length > 0 && deltsWorkout.length > 0 && trapsWorkout.length > 0 && tricepsWorkout.length > 0 && bicepsWorkout.length > 0 && latsWorkout.length > 0 && spineWorkout.length > 0 && upperBackWorkout.length > 0
+  ){
     return true
   }
 }
 
 
-
-  return (
-    <section>
-      <h1>Happy Newyears App 🎆🎇</h1>
-      <h2>{quote.q}</h2>
-       {quote.a}
-      <Meals breakfast={breakfast} lunch={lunch} dinner={dinner}/>
-   {constantData() ? <Workout trapsWorkout={trapsWorkout} deltsWorkout={deltsWorkout} hamstringsWorkout={hamstringsWorkout}
-     upperBackWorkout={upperBackWorkout} spineWorkout={spineWorkout} tricepsWorkout={tricepsWorkout}
-     latsWorkout={latsWorkout} pecsWorkout={pecsWorkout} bicepsWorkout={bicepsWorkout} glutsWorkout={glutsWorkout}
-     quadsWorkout={quadsWorkout} calfsWorkout={calfsWorkout}/> : null }
-
-       <Quotes quotes={quote}/>
-    </section>
-
-  )
+return (
+        <Background>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Item><h1>Happy New Years App 🎆🎇</h1></Item>
+          </Grid>
+          <Grid item xs={12} >
+            <Item><h2>{quote.q} : BY {quote.a}</h2></Item>
+          </Grid>
+          <Grid item xs={12}>
+            <Item><section><Meals breakfast={breakfast} lunch={lunch} dinner={dinner}/></section></Item>
+          </Grid>
+          <Grid item xs={12}>
+            <Item>{constantData() ? <Workout trapsWorkout={trapsWorkout} deltsWorkout={deltsWorkout} hamstringsWorkout={hamstringsWorkout}
+            upperBackWorkout={upperBackWorkout} spineWorkout={spineWorkout} tricepsWorkout={tricepsWorkout}
+            latsWorkout={latsWorkout} pecsWorkout={pecsWorkout} bicepsWorkout={bicepsWorkout} glutsWorkout={glutsWorkout}
+            quadsWorkout={quadsWorkout} calfsWorkout={calfsWorkout}/> : null }</Item>
+          </Grid>
+          <Grid item xs={12} >
+            <Item><Quotes quotes={quote}/></Item>
+          </Grid>
+          <Grid item xs={12} >
+              <Item>{quotes.length > 0 ? <MyQuotes myQuotes={quotes}/> : null }</Item>
+          </Grid>
+        </Grid></Background>)
 }
 export default  App;
 

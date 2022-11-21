@@ -20,7 +20,7 @@ const saveQuote = (req, res) => {
   console.log(saveAuthor,"this is the author", savedQuote, "this is the quote")
 
   pool
-  .query(`INSERT INTO quotes(quotes, author) VALUES (${savedQuote}, ${saveAuthor}) `)
+  .query('INSERT INTO quotes(quotes, author) VALUES ($1, $2) ', [savedQuote, saveAuthor])
   .then((data) => {
     res.sendStatus(201)
     console.log("done!")

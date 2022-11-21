@@ -7,11 +7,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, "/client/dist"),
   },
-  // devServer: {
-  //   static: path.resolve(__dirname, '/client/dist'),
-  //   port: 3000,
-  //   hot: true
-  // },
+  devServer: {
+    static: path.resolve(__dirname, '/client/dist'),
+    port: 3000,
+    hot: true
+  },
   module: {
     rules: [
       {

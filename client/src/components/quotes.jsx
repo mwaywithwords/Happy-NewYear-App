@@ -31,12 +31,15 @@ const SaveDailyQuote = () => {
 
       <header>
         <h2>⚙️ Saved Quotes</h2>
+        <h3>Do you Love the Quote? You can keep it!</h3>
       </header>
       <table>
         <thead>
           <tr>
             <th>quote</th>
             <th>auther</th>
+            <th>Like Quote</th>
+            <th>Save Quote</th>
           </tr>
         </thead>
         <tbody>
@@ -46,7 +49,7 @@ const SaveDailyQuote = () => {
                 <input name="status" type="checkbox" onChange={isChecked} />
               </td>
               <td onClick={()=>{
-                SaveDailyQuote(), console.log('did it ')
+                SaveDailyQuote(), console.log('did it')
               }}>✅</td></tr>
         </tbody>
       </table>
